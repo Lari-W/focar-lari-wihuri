@@ -30,12 +30,16 @@ try:
         print ("Suoritetaan komento: ", komento)
 
         if komento == "eteen":
+            focar.nopeuden_vaihto(80)
             focar.eteen(ajo_aika)
         elif komento == "taakse":
+            focar.nopeuden_vaihto(80)
             focar.taakse(ajo_aika)
         elif komento == "vasen":
+            focar.nopeuden_vaihto(80)
             focar.vasen(kaantymis_aika)
         elif komento == "oikea":
+            focar.nopeuden_vaihto(80)
             focar.oikea(kaantymis_aika)
         elif komento == "led_on":
             focar.led_paalle()
@@ -52,6 +56,7 @@ try:
 except:
     print("Virhe komentojen suorituksessa.") # Tulostetaan virhe, jos komennon suorittaminen epäonnistuu
 
-# Pysäytetää auto lopuksi
-focar.pysahdy()
-print("Ajo suoritettu.")
+finally:
+    # Pysäytetää auto lopuksi
+    focar.pysahdy()
+    print("Ajo suoritettu.")
